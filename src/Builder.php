@@ -146,11 +146,6 @@ class Builder extends HookableBuilder
         }
 
         $this->query->where('relevance', '>=', new Expression(number_format($threshold, 2)));
-
-        $this->query->orders = array_merge(
-            [['column' => 'relevance', 'direction' => 'desc']],
-            (array) $this->query->orders
-        );
     }
 
     /**
